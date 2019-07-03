@@ -74,6 +74,7 @@ public class CervejasController {
 		mv.addObject("pagina", paginaWrapper);
 //		mv.addObject("cervejas", cervejas.filtrar(cervejaFilter, pageable));
 		
+		System.out.println("Primeiro commit no branch Office");
 
 		return mv;
 	}
