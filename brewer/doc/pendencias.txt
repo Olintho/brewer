@@ -1,7 +1,7 @@
 
-Exercicios 10.6 -> cadastro rápido de estilo
+Exercicios 22.4
 
-Configurar hotswap Agent para html css e outros
+
 
 
 

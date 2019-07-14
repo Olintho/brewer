@@ -74,9 +74,6 @@ public class CervejasController {
 		mv.addObject("pagina", paginaWrapper);
 //		mv.addObject("cervejas", cervejas.filtrar(cervejaFilter, pageable));
 		
-		System.out.println("Primeiro commit no branch Office");
-		System.out.println("Merge ok. Upando from Home");
-
 		return mv;
 	}
 	
