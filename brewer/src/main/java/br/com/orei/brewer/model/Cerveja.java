@@ -171,7 +171,7 @@ public class Cerveja {
 	}
 	
 	public String getFotoOuMock(){
-		return !StringUtils.isEmpty(foto) ? foto : "thumbnail.cerveja-mock.png";
+		return !StringUtils.isEmpty(foto) ? foto : "cerveja-mock.png";
 	}
 
 	@Override

@@ -16,6 +16,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
+import org.springframework.data.repository.support.DomainClassConverter;
 import org.springframework.data.web.config.EnableSpringDataWebSupport;
 import org.springframework.format.datetime.standard.DateTimeFormatterRegistrar;
 import org.springframework.format.number.NumberStyleFormatter;
@@ -43,11 +44,12 @@ import br.com.orei.brewer.controller.converter.CidadeConverter;
 import br.com.orei.brewer.controller.converter.EstadoConverter;
 import br.com.orei.brewer.controller.converter.EstiloConverter;
 import br.com.orei.brewer.controller.converter.GrupoConverter;
+import br.com.orei.brewer.session.TabelasItensSession;
 import br.com.orei.brewer.thymeleaf.BrewerDialect;
 import nz.net.ultraq.thymeleaf.LayoutDialect;
 
 @Configuration
-@ComponentScan(basePackageClasses = { CervejasController.class })
+@ComponentScan(basePackageClasses = { CervejasController.class, TabelasItensSession.class })
 @EnableWebMvc
 @EnableSpringDataWebSupport
 @EnableCaching
@@ -143,6 +145,11 @@ public class WebConfig extends WebMvcConfigurerAdapter implements ApplicationCon
 		bundle.setBasename("classpath:/messages");
 		bundle.setDefaultEncoding("UTF-8"); // http://www.utf8-chartable.de/
 		return bundle;
+	}
+	
+	@Bean
+	public DomainClassConverter<FormattingConversionService> domainClassConverter(){
+		return new DomainClassConverter<FormattingConversionService>(mvcConversionService());
 	}
 	
 }
